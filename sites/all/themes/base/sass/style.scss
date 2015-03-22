@@ -1,0 +1,356 @@
+@import "compass";
+@import "_reset";
+@import "_fonts";
+@import "_icons";
+@import "_base";
+
+/* BASIC STYLES
+-------------------------------------------------------------- */
+*{
+  @include box-sizing('border-box');
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+$baseline:        11px;
+$scale:           2;
+
+$side-padding:    ($baseline * $scale) * 7;
+
+body{
+  font: 11px / 2 $font_main;
+  background-color: $page_bg;  
+  color: $color_main;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+ // @include baseline-grid-background(($baseline * $scale), #f1f1f1)
+}
+
+a{
+  @include transition;
+  color: $color_main;
+  text-decoration: none;
+  
+  &:hover{
+    color: $color_main;
+  }
+}
+
+a,
+p{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h3{
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+
+ul,
+ul.menu,
+ul.menu li,
+.item-list ul li{
+  list-style: none;
+  text-align: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+li a.active,
+li.opened span.nolink{color: $color_main;}
+
+
+/* Layout
+-------------------------------------------------------------- */
+#header-container{
+  @include transition;
+  position: fixed;
+  top: 0;
+  right: 55%;
+  z-index: 900;
+  padding: 10px;
+  width: 45%;
+  height: 100vh;
+  padding: $side-padding $side-padding 0 (($baseline * $scale) * 2);
+  text-align: right;
+
+  .block{
+    margin-top: ($baseline * $scale) * 3;
+  }
+  
+  @include bp(l){
+    right: 50%;
+    width: 50%;
+    padding: $side-padding ($side-padding / 2) 0 (($baseline * $scale) * 2);
+  }
+
+  @include bp(m){
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: auto;
+    height: auto;
+    padding: 0;
+    padding-top: ($baseline * $scale) * 2;
+    padding-right: ($baseline * $scale) * 2;
+
+    .block{
+      margin-top: ($baseline * $scale) * 2;
+    }
+  }
+}
+
+#main-container{
+  @include transition;
+  position: relative;
+  margin-left: 45%;
+  max-width: 800px;
+  padding-top: $side-padding;
+  padding-right: ($baseline * $scale) * 2;
+
+  @include bp(l){
+    margin-left: 50%;
+  }
+
+  @include bp(m){
+    padding-top: $side-padding / 3;
+    margin-left: 0;
+    padding-left: 10px;
+  }
+}
+
+#logo{
+  line-height: 0;
+
+  img{
+    width: auto;
+    height: ($baseline * $scale) * 2;
+  }
+}
+
+#back-to-top{
+  @include transition;
+  display: none;
+  position: fixed;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+
+  span{ 
+    @include transition;
+    padding: 10px;
+    background-color: $color_accent;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 0;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #000;
+    }
+  }
+
+  &.active{
+    bottom: ($baseline * $scale);
+  }
+  
+  @include bp(m){
+    display: block;
+  }
+
+}
+
+
+#menu{
+  display: block;
+  a{
+    position: relative;
+    display: block;
+
+    span{
+      @include transition;
+      position: absolute; 
+      width: ($baseline * $scale) * 2;
+      height: 4px;
+      
+      right: - ($baseline * $scale) * 3;
+      top: 8px;
+
+      
+
+      @include bp(m){
+        width: ($baseline * $scale) * .5;
+        right: -($baseline * $scale) * 1;
+      }
+    }
+
+    &:hover{
+      span{
+        background-color: $color_accent;
+      }
+    }
+
+    &.active{
+      span{
+        background-color: $color_accent;
+        width: ($baseline * $scale) * 7;
+        right: - ($baseline * $scale) * 8;
+
+        @include bp(l){
+          width: ($baseline * $scale) * 4;
+          right: - ($baseline * $scale) * 5;
+        }
+
+        @include bp(m){
+          width: ($baseline * $scale) * 1.5;
+          right: -($baseline * $scale) * 2;
+
+        }
+      }
+    }
+  } 
+}
+
+
+
+.page-clients{
+
+  #main-container{
+    @include pie-clearfix;
+    
+    padding-bottom: ($baseline * $scale) * 5;
+
+    .item-list{
+      float: left;
+      margin-left: ($baseline * $scale) * 4;
+      margin-bottom: ($baseline * $scale) * 5;
+
+      span.line{
+        width: 60px;
+        height: 4px;
+        background-color: $color_accent;
+        display: block;
+        margin-top: ($baseline * $scale);
+      }
+    }
+
+    li{
+      margin-bottom: ($baseline * $scale) * .25;
+    }
+
+    @include bp(m){
+      position: relative;
+      padding-left: ($baseline * $scale);
+
+      .item-list{
+        position: relative;
+        float: none;
+        margin-right: 0;
+        text-align: right;
+        padding-bottom: (($baseline * $scale) * 2) - ($baseline * $scale) * .5;
+        margin-bottom: ($baseline * $scale) * 2;
+      }
+
+      span.line{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+      }
+    }
+  }
+}
+
+
+
+.gallery.teaser{
+  margin-bottom: (170px / 4) + ($baseline * $scale);
+  position: relative;
+  
+  .header{
+    position: absolute;
+    top: -22px;
+    right: 0;
+
+    @include bp(m){
+      position: relative;
+      top: 0;
+      text-align: right;
+    }
+  }
+  .images{
+    padding-bottom: (170px / 4);
+    @include bp(m){
+      padding-bottom: (170px / 4) / 2
+    }
+  }
+
+  ul{
+    margin-bottom: 0;
+  }
+
+  li{
+    line-height: 0;
+    margin-bottom: ($baseline * $scale);
+  }
+
+  .dash{
+    @include inline-block;
+    color: $color_accent;
+
+    @include bp(m){
+      position: relative;
+      top: 0;
+      text-align: right;
+      display: block;
+      line-height: 0;
+      font-size: 20px;
+      margin-top: 2px;
+      margin-bottom: 5px;
+    }
+  }
+
+  span.line{
+    width: 60px;
+    height: 4px;
+    margin: 0 auto;
+    background-color: $color_accent;
+    display: block;
+
+    @include bp(m){
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  @include bp(m){
+    margin-bottom: ((170px / 4) + ($baseline * $scale)) / 2;
+    text-align: right;
+  }
+}
+
+
+.krumo-root{
+  z-index: 1000;
+}
+
+.service-links{
+
+  li{
+    @include inline-block;
+  }
+}
+
+
+
+
+
