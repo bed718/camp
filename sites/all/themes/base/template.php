@@ -70,7 +70,7 @@ function base_preprocess_node(&$vars){
 		   	)
 		   );
 
-		   kpr($vars);
+		   //kpr($vars);
 
 			if(isset($vars['cover_image'])){
 				$vars['cover_image'] = l($vars['cover_image'], $url, array('html'=>TRUE));
