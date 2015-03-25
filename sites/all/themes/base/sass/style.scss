@@ -152,10 +152,6 @@ li.opened span.nolink{color: $color_main;}
     font-size: 18px;
     letter-spacing: 0;
     cursor: pointer;
-
-    &:hover{
-      background-color: #000;
-    }
   }
 
   &.active{
