@@ -21,7 +21,7 @@ Drupal.behaviors.init = {
 
 
 			$(window).scroll(function(event) {
-				var top = $("html, body").scrollTop();
+				var top = $(window).scrollTop();
 
 				if(top > 200){
 					topTrigger.addClass('active');
