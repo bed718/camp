@@ -334,6 +334,14 @@ li.opened span.nolink{color: $color_main;}
   }
 }
 
+.pager{
+  padding-bottom: 80px !important;
+}
+
+.pager-current{
+  font-weight: normal;
+}
+
 
 .krumo-root{
   z-index: 1000;
