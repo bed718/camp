@@ -193,7 +193,7 @@ function theadmin_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'media_gallery_node_form') {
     $form['menu']['#group'] = false;
     unset($form['menu']['link']['weight']);
-   // kpr($form);
+    //kpr($form);
   }
 
   if ($form_id == 'menu_overview_form') {
@@ -217,7 +217,7 @@ function theadmin_form_alter(&$form, &$form_state, $form_id) {
     
   }
 
-  //dpm($form);
+ // dpm($form);
 
   
 } 
