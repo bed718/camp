@@ -604,3 +604,14 @@ li a.active, li.opened span.nolink {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline; }
+
+/* line 357, ../sass/style.scss */
+#info {
+  margin-left: 88px; }
+/* line 361, ../sass/style.scss */
+#info span.line {
+  width: 60px;
+  height: 4px;
+  background-color: #c04235;
+  display: block;
+  margin-top: 22px; }
