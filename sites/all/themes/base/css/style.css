@@ -615,3 +615,8 @@ li a.active, li.opened span.nolink {
   background-color: #c04235;
   display: block;
   margin-top: 22px; }
+@media (max-width: 760px) {
+  /* line 357, ../sass/style.scss */
+  #info {
+    margin-left: 22px;
+    margin-bottom: 176px; } }

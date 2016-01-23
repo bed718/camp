@@ -359,12 +359,17 @@ li.opened span.nolink{color: $color_main;}
   margin-left: ($baseline * $scale) * 4;
 
   span.line{
-      width: 60px;
-      height: 4px;
-      background-color: $color_accent;
-      display: block;
-      margin-top: ($baseline * $scale);
-    }
+    width: 60px;
+    height: 4px;
+    background-color: $color_accent;
+    display: block;
+    margin-top: ($baseline * $scale);
+  }
+
+  @include bp(m){
+    margin-left: ($baseline * $scale);
+    margin-bottom: ($baseline * $scale) * 8;
+  }
 }
 
 
